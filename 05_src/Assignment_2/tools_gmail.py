@@ -90,8 +90,7 @@ def _analyze_sentiments(texts: List[str]) -> List[Dict]:
 
 def _load_credentials_or_run_flow(token_path: str) -> Credentials:
     """
-    If token json exists, load it; otherwise run InstalledAppFlow using
-    the in-file client config and save token to token_path.
+ Pull Credentials from secrets.
     """
     if os.path.exists(token_path):
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
@@ -105,14 +104,7 @@ def _load_credentials_or_run_flow(token_path: str) -> Credentials:
 
 def get_gmail_tool() -> ToolNode:
     """
-    Return a ToolNode that reads Gmail messages and summarizes positive/negative sentiment.
-    Inputs:
-      - query: Gmail search query (default: "in:inbox -category:social")
-      - max_results: number of messages to fetch (default: 10)
-    Environment:
-      - GMAIL_TOKEN_JSON (optional): path to saved token json (defaults to './token.json')
-    Output:
-      dict with keys: "messages" (list containing summary string) and "results" (details)
+    Tool that reads Gmail messages and summarizes positive/negative sentiment.
     """
     def gmail_read_tool(inputs: Dict[str, Any]) -> Dict[str, Any]:
         token_path = os.getenv("GMAIL_TOKEN_JSON", "token.json")
