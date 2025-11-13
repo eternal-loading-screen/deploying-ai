@@ -20,11 +20,24 @@ Initial MVP Tools:
 
 # Dependencies 
 
-Python
+
+Python Packages:
+
+typing
+
+os
+
+base64
+
+re
+
+html
 
 course_chat.main 
 
 langchain_core.messages 
+
+langgraph.prebuilt.tool_node
 
 gradio
 
@@ -33,3 +46,13 @@ dotenv
 googleapiclient.discovery
 
 google_auth_oauthlib.flow
+
+---------------
+
+# Gmail Secrets Format
+
+GMAIL_CLIENT_ID=
+
+GMAIL_CLIENT_SECRET=
+
+GMAIL_PROJECT_ID=

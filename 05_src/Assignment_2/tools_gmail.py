@@ -46,7 +46,7 @@ def _decode_base64_url(data_b64: str) -> str:
 
 def _extract_plain_text(msg_payload: Dict) -> str:
     """
-    Extract plain text from Gmail message payload (handles multipart).
+    Extract text from Gmail
     """
     if not msg_payload:
         return ""
@@ -77,8 +77,7 @@ def _get_header(headers: List[Dict], name: str) -> str:
 
 def _analyze_sentiments(texts: List[str]) -> List[Dict]:
     """
-    Use transformers sentiment pipeline to analyze a list of texts.
-    Returns list of dicts: {"label": ..., "score": float, "text": ...}
+    Analyze sentiment as a list of text.
     """
     sentiment = pipeline("sentiment-analysis")
     outs = sentiment(texts)
