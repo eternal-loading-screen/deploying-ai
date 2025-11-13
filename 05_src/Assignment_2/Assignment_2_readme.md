@@ -23,9 +23,13 @@ Initial MVP Tools:
 Python
 
 course_chat.main 
+
 langchain_core.messages 
+
 gradio
+
 dotenv
 
 googleapiclient.discovery
+
 google_auth_oauthlib.flow
