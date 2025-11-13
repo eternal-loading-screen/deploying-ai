@@ -13,6 +13,7 @@ But using a chatbot powered by natural language processing, it can accelerate so
 Initial MVP Tools:
 
 > Gmail Inbox Reader
+
 > VIP Customer Detail Reader (ALPHA - CSV Database)
 
 --------------
